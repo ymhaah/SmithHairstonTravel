@@ -1,0 +1,32 @@
+{
+    "name": "new-smithhairstontravel",
+    "private": true,
+    "version": "0.0.1",
+    "type": "module",
+    "author": {
+        "name": "Youssef Hefnawy",
+        "email": "ymhaah250@gmail.com"
+    },
+    "contributors": [
+        {
+            "name": "Youssef Hefnawy",
+            "email": "ymhaah250@gmail.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ymhaah/CLIENT_New-SmithHairstonTravel"
+    },
+    "bugs": {
+        "url": "https://github.com/ymhaah/CLIENT_New-SmithHairstonTravel/issues"
+    },
+    "homepage": "https://github.com/ymhaah/CLIENT_New-SmithHairstonTravel",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^5.2.0"
+    }
+}
