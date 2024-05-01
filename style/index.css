@@ -357,7 +357,7 @@ svg {
 .txt-animation {
   opacity: 0.4;
   transform: translateX(-25%);
-  animation: text-animation calc(var(--time-slow) * 1.5) var(--animation) forwards;
+  animation: text-animation calc(var(--time-slow) * 2.5) var(--animation) forwards;
 }
 
 @keyframes text-animation {
