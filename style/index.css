@@ -623,6 +623,7 @@ main#Hero .Container .r2 .hero-image:nth-child(2n) {
 section[aria-labelledby=form-title] {
   width: 100%;
   position: relative;
+  border-bottom: 1rem solid var(--txt-clr);
 }
 section[aria-labelledby=form-title] img {
   position: absolute;
