@@ -412,6 +412,9 @@ header.main-header .header__Container .header__Logo {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  transform: translateY(-100%);
+  opacity: 0.5;
+  animation: loeadIn var(--time-slow) var(--animation) forwards;
 }
 header.main-header .header__Container .header__Logo a {
   height: 60%;
@@ -435,10 +438,25 @@ header.main-header .header__Container .c2 nav ul {
   align-items: center;
   gap: 1.5rem;
 }
+header.main-header .header__Container .c2 nav ul li {
+  transform: translateY(-100%);
+  opacity: 0.5;
+  animation: loeadIn var(--time-slow) var(--animation) forwards;
+}
 header.main-header .header__Container .c2 nav ul a {
   white-space: nowrap;
 }
 
+@keyframes loeadIn {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 main#Hero {
   width: 100%;
   margin-bottom: calc(var(--margin) * 2.5);
