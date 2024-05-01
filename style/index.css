@@ -540,12 +540,14 @@ main#Hero .Container .r2 .hero-image .card {
   border-bottom-right-radius: var(--radius);
   top: 96%;
   left: 0;
+  transform: translateY(-50%);
   isolation: isolate;
-  display: none;
+  opacity: 0;
   z-index: 1;
   background-color: var(--bg-clr);
   padding: 5%;
   box-shadow: inset 0px 20px 15px 0px hsla(0, 0%, 0%, 0.08), 0 0 20px 10px hsla(0, 0%, 0%, 0.1);
+  transition: opacity var(--time-fast) var(--animation), transform var(--time-slow) var(--animation);
 }
 main#Hero .Container .r2 .hero-image .card h3 {
   font-size: var(--fs-l);
@@ -560,9 +562,15 @@ main#Hero .Container .r2 .hero-image .card a.button {
   margin-top: 1em;
 }
 main#Hero .Container .r2 .hero-image:hover .card {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 main#Hero .Container .r2 .hero-image:hover .imag-overlay {
+  opacity: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+main#Hero .Container .r2 .hero-image:hover .imag-overlay h2 {
   opacity: 1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
