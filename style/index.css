@@ -513,6 +513,8 @@ main#Hero .Container .r2 .hero-image .imag-overlay {
   overflow: hidden;
   padding: 5% 5% 8% 8%;
   opacity: 0;
+  background: linear-gradient(to top, hsla(0, 0%, 10%, 0.9) 0%, hsla(0, 0%, 10%, 0.5) 25%, hsla(0, 0%, 10%, 0) 50%, hsla(0, 0%, 10%, 0.2) 80%, hsla(0, 0%, 10%, 0.2) 100%);
+  transition: opacity var(--time-fast) var(--animation);
 }
 main#Hero .Container .r2 .hero-image .imag-overlay h2 {
   font-size: var(--fs-l);
@@ -564,7 +566,6 @@ main#Hero .Container .r2 .hero-image:hover .imag-overlay {
   opacity: 1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background: linear-gradient(to top, hsla(0, 0%, 10%, 0.9) 0%, hsla(0, 0%, 10%, 0.5) 25%, hsla(0, 0%, 10%, 0) 50%, hsla(0, 0%, 10%, 0.2) 80%, hsla(0, 0%, 10%, 0.2) 100%);
 }
 main#Hero .Container .r2 .hero-image:nth-child(2n) {
   margin-bottom: 3rem;
