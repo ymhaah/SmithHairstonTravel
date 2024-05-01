@@ -582,12 +582,26 @@ main#Hero .Container .r2 .hero-image:hover .card {
   opacity: 1;
   transform: translateY(0);
 }
+main#Hero .Container .r2 .hero-image .card:has(.button:focus-visible) {
+  opacity: 1;
+  transform: translateY(0);
+}
 main#Hero .Container .r2 .hero-image:hover .imag-overlay {
   opacity: 1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+main#Hero .Container .r2 .hero-image:has(.button:focus-visible) .imag-overlay {
+  opacity: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 main#Hero .Container .r2 .hero-image:hover .imag-overlay h2 {
+  opacity: 1;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+main#Hero .Container .r2 .hero-image:has(.button:focus-visible) .imag-overlay h2 {
   opacity: 1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
