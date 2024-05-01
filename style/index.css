@@ -414,7 +414,7 @@ header.main-header .header__Container .header__Logo {
   align-items: center;
   transform: translateY(-100%);
   opacity: 0.5;
-  animation: loeadIn var(--time-slow) var(--animation) forwards;
+  animation: loeadIn calc(var(--time-slow) * 2) var(--animation) forwards;
 }
 header.main-header .header__Container .header__Logo a {
   height: 60%;
@@ -441,7 +441,7 @@ header.main-header .header__Container .c2 nav ul {
 header.main-header .header__Container .c2 nav ul li {
   transform: translateY(-100%);
   opacity: 0.5;
-  animation: loeadIn var(--time-slow) var(--animation) forwards;
+  animation: loeadIn calc(var(--time-slow) * 2) var(--animation) forwards;
 }
 header.main-header .header__Container .c2 nav ul a {
   white-space: nowrap;
