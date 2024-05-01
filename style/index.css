@@ -547,7 +547,7 @@ main#Hero .Container .r2 .hero-image .card {
   background-color: var(--bg-clr);
   padding: 5%;
   box-shadow: inset 0px 20px 15px 0px hsla(0, 0%, 0%, 0.08), 0 0 20px 10px hsla(0, 0%, 0%, 0.1);
-  transition: opacity var(--time-fast) var(--animation), transform var(--time-slow) var(--animation);
+  transition: opacity var(--time-fast) var(--animation), transform var(--time-fast) var(--animation);
 }
 main#Hero .Container .r2 .hero-image .card h3 {
   font-size: var(--fs-l);
