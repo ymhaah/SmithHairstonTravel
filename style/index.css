@@ -19,20 +19,6 @@
   color-scheme: light;
 }
 
-:root {
-  --ff-sans: "Open Sans", sans-serif;
-  --ff-serif: "Libre Caslon Text", serif;
-  --fs-s: 1rem; /* 12px */
-  --fs-m: 1.3rem; /* 21.28px */
-  --fs-l: 1.7rem; /* 28.48px */
-  --fs-xl: 2.3rem; /* 37.92px */
-  --fs-xxl: 3.1rem; /* 50.56px */
-  --fs-3xl: calc(2.6rem + 4vw);
-  --fw-l: 400;
-  --fw-m: 500;
-  --fw-b: 700;
-}
-
 body {
   font-family: var(--ff-sans);
   font-weight: var(--fw-l);
@@ -54,6 +40,10 @@ h4,
 h5,
 p {
   margin: 0;
+}
+
+.hero-title {
+  font-size: var(--fs-3xl);
 }
 
 .h1 {
@@ -145,12 +135,46 @@ a:not(.button) {
   }
 }
 :root {
+  --container-width: 90%;
+  --Header-hight: 5rem;
+  --Logo-hight: 60%;
+  --Hero-Card-aspect-ratio: 1.6 / 1;
   --radius: 0.5em;
   --shadow: 0 6px 30px rgba(0, 0, 0, 10%);
   --margin: min(12em, 12vh);
+  --gap: 1rem;
   --animation: cubic-bezier(0.4, 0, 0.2, 1);
   --time-fast: 0.2s;
   --time-slow: 0.4s;
+  /* Alpha */
+  --clr-alpha-white: 0, 0%, 100%;
+  --clr-alpha-black: 0, 0%, 0%;
+  /* Light Mode */
+  --bg-clr-light: hsl(264, 100%, 99%);
+  --txt-clr-light: hsl(257, 94%, 6%);
+  --primary-clr-light: hsl(255, 51%, 52%);
+  --contrast-clr-light: hsl(25, 92%, 61%);
+  --link-clr-light: hsl(229, 57%, 53%);
+  --mono-clr-light: hsla(0, 0%, 50%, 0.5);
+  /* Main Colors */
+  --bg-clr: var(--bg-clr-light);
+  --txt-clr: var(--txt-clr-light);
+  --primary-clr: var(--primary-clr-light);
+  --contrast-clr: var(--contrast-clr-light);
+  --link-clr: var(--link-clr-light);
+  --mono-clr: var(--mono-clr-light);
+  color-scheme: light;
+  --ff-sans: "Open Sans", sans-serif;
+  --ff-serif: "Libre Caslon Text", serif;
+  --fs-s: 1rem; /* 12px */
+  --fs-m: 1.3rem; /* 21.28px */
+  --fs-l: 1.7rem; /* 28.48px */
+  --fs-xl: 2.3rem; /* 37.92px */
+  --fs-xxl: 3.1rem; /* 50.56px */
+  --fs-3xl: calc(2.6rem + 4vw);
+  --fw-l: 400;
+  --fw-m: 500;
+  --fw-b: 700;
 }
 
 *,
@@ -188,7 +212,6 @@ body {
 }
 
 .Container {
-  --container-width: 90%;
   height: 100%;
   width: var(--container-width, 90%);
   margin-inline: auto;
@@ -360,6 +383,38 @@ svg {
   animation: text-animation calc(var(--time-slow) * 2.5) var(--animation) forwards;
 }
 
+.loeadToDown {
+  transform: translateY(-100%);
+  opacity: 0.5;
+  animation: loeadToDown calc(var(--time-slow) * 2) var(--animation) forwards;
+}
+
+@keyframes navSlideIn {
+  0% {
+    transform: translateY(-125%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes navSlideOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-125%);
+  }
+}
+@keyframes loeadToDown {
+  0% {
+    opacity: 0.5;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes text-animation {
   from {
     opacity: 0.4;
@@ -370,6 +425,11 @@ svg {
     transform: translateX(0);
   }
 }
+body:has([cvoxignore]) .hero-image .card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .visually-hidden {
   position: absolute;
   position: absolute !important;
@@ -383,17 +443,14 @@ svg {
   border: 0 !important;
 }
 
-:root {
-  --Header-hight: 5rem;
-}
-
 header.main-header {
   width: 100%;
+  height: var(--Header-hight);
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 9999;
   isolation: isolate;
-  height: var(--Header-hight);
   padding: 0.1rem 0;
   box-shadow: var(--shadow);
   background-color: var(--bg-clr);
@@ -403,12 +460,12 @@ header.main-header .header__Container {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: var(--gap);
 }
 header.main-header .header__Container .coll {
   width: auto;
   height: 100%;
-  gap: 1rem;
+  gap: var(--gap);
 }
 header.main-header .header__Container .header__Logo {
   width: 100%;
@@ -417,12 +474,9 @@ header.main-header .header__Container .header__Logo {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  transform: translateY(-100%);
-  opacity: 0.5;
-  animation: loeadIn calc(var(--time-slow) * 2) var(--animation) forwards;
 }
 header.main-header .header__Container .header__Logo a {
-  height: 60%;
+  height: var(--Logo-hight);
 }
 header.main-header .header__Container .header__Logo a img {
   height: 100%;
@@ -441,27 +495,12 @@ header.main-header .header__Container .c2 nav ul {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  gap: 1.5rem;
-}
-header.main-header .header__Container .c2 nav ul li {
-  transform: translateY(-100%);
-  opacity: 0.5;
-  animation: loeadIn calc(var(--time-slow) * 2) var(--animation) forwards;
+  gap: calc(var(--gap) * 1.5);
 }
 header.main-header .header__Container .c2 nav ul a {
   white-space: nowrap;
 }
 
-@keyframes loeadIn {
-  0% {
-    opacity: 0.5;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 main#Hero {
   width: 100%;
   padding-top: var(--Header-hight);
@@ -492,42 +531,39 @@ main#Hero .Container .r2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.625rem;
+  gap: calc(var(--gap) / 1.6);
   margin-top: calc(var(--margin) / 2.5);
 }
 main#Hero .Container .r2 .hero-image {
-  width: 25%;
-  aspect-ratio: 1.6/1;
+  width: 25vw;
+  aspect-ratio: var(--Hero-Card-aspect-ratio);
   position: relative;
 }
-main#Hero .Container .r2 .hero-image .image-placeholder {
-  width: 100%;
-  height: 100%;
+main#Hero .Container .r2 .hero-image .image-placeholder,
+main#Hero .Container .r2 .hero-image img,
+main#Hero .Container .r2 .hero-image .imag-overlay,
+main#Hero .Container .r2 .hero-image .card {
   position: absolute;
-  border-radius: var(--radius);
-  top: 0;
+  width: 100%;
   left: 0;
+}
+main#Hero .Container .r2 .hero-image .image-placeholder,
+main#Hero .Container .r2 .hero-image img,
+main#Hero .Container .r2 .hero-image .imag-overlay {
+  height: 100%;
+  top: 0;
+  border-radius: var(--radius);
+}
+main#Hero .Container .r2 .hero-image .image-placeholder {
   z-index: 2;
   background-color: var(--txt-clr);
   opacity: 0.1;
 }
 main#Hero .Container .r2 .hero-image img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: var(--radius);
-  top: 0;
-  left: 0;
   z-index: 3;
   box-shadow: var(--shadow);
 }
 main#Hero .Container .r2 .hero-image .imag-overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: var(--radius);
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -556,17 +592,14 @@ main#Hero .Container .r2 .hero-image .imag-overlay svg {
   color: var(--bg-clr);
 }
 main#Hero .Container .r2 .hero-image .card {
-  width: 100%;
   height: auto;
-  position: absolute;
+  top: 96%;
+  z-index: 1;
+  isolation: isolate;
+  transform: translateY(-25%);
+  opacity: 0;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  top: 96%;
-  left: 0;
-  transform: translateY(-50%);
-  isolation: isolate;
-  opacity: 0;
-  z-index: 1;
   background-color: var(--bg-clr);
   padding: 5%;
   box-shadow: inset 0px 20px 15px 0px hsla(0, 0%, 0%, 0.08), 0 0 20px 10px hsla(0, 0%, 0%, 0.1);
@@ -584,46 +617,27 @@ main#Hero .Container .r2 .hero-image .card a.button {
   width: 100%;
   margin-top: 1em;
 }
-main#Hero .Container .r2 .hero-image:hover .card {
+main#Hero .Container .r2 .hero-image:hover .card,
+main#Hero .Container .r2 .hero-image .card:has(.button:focus),
+main#Hero .Container .r2 .hero-image .card:has(.msreadout-word-highlight) {
   opacity: 1;
   transform: translateY(0);
 }
-main#Hero .Container .r2 .hero-image .card:has(.button:focus-visible) {
-  opacity: 1;
-  transform: translateY(0);
-}
-main#Hero .Container .r2 .hero-image:hover .imag-overlay {
-  opacity: 1;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-main#Hero .Container .r2 .hero-image:has(.button:focus-visible) .imag-overlay {
-  opacity: 1;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-main#Hero .Container .r2 .hero-image:hover .imag-overlay h2 {
-  opacity: 1;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-main#Hero .Container .r2 .hero-image:has(.button:focus-visible) .imag-overlay h2 {
+main#Hero .Container .r2 .hero-image:hover .imag-overlay,
+main#Hero .Container .r2 .hero-image:has(.button:focus) .imag-overlay,
+main#Hero .Container .r2 .hero-image:has(.msreadout-word-highlight) .imag-overlay {
   opacity: 1;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 main#Hero .Container .r2 .hero-image:nth-child(2n) {
-  margin-bottom: 3rem;
-}
-
-.hero-title {
-  font-size: var(--fs-3xl);
+  margin-bottom: calc(var(--gap) * 3);
 }
 
 section[aria-labelledby=form-title] {
   width: 100%;
   position: relative;
-  border-bottom: 1rem solid var(--txt-clr);
+  background-color: var(--txt-clr);
 }
 section[aria-labelledby=form-title] img {
   position: absolute;
@@ -631,7 +645,6 @@ section[aria-labelledby=form-title] img {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
 }
 section[aria-labelledby=form-title] .Container {
   --container-width: 50%;
@@ -642,11 +655,12 @@ section[aria-labelledby=form-title] .Container {
   align-items: center;
 }
 section[aria-labelledby=form-title] .Container .Form {
-  padding: 2rem;
-  margin: 3rem 0;
+  padding: calc(var(--gap) * 2);
+  margin: calc(var(--gap) * 3) 0;
   border-radius: var(--radius);
   background-color: var(--bg-clr);
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 section[aria-labelledby=form-title] .Container .Form form {
   display: flex;
@@ -670,7 +684,7 @@ section[aria-labelledby=form-title] .Container .Form form .input-wrapper #input-
   cursor: pointer;
 }
 section[aria-labelledby=form-title] .Container .Form form button {
-  margin-top: 1rem;
+  margin-top: var(--gap);
   width: 100%;
 }
 
@@ -683,8 +697,8 @@ footer .Container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
-  gap: 0.5rem;
+  padding: var(--gap) 0;
+  gap: calc(var(--gap) / 2);
 }
 footer .Container h2 {
   white-space: nowrap;
@@ -699,10 +713,10 @@ footer .Container nav ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: var(--gap);
 }
 footer .Container nav ul li {
-  transition: transform 0.3s ease-out;
+  transition: transform var(--time-fast) var(--animation);
 }
 footer .Container nav ul li a svg {
   width: 2rem;
@@ -729,6 +743,9 @@ footer .Container nav ul li a svg {
   .hero-title {
     --fs-3xl: calc(2.5rem + 3vw);
   }
+  main#Hero {
+    --Hero-Card-aspect-ratio: 5 / 3;
+  }
   main#Hero .Container .r1 p {
     width: 70%;
   }
@@ -738,14 +755,14 @@ footer .Container nav ul li a svg {
   }
   main#Hero .Container .r2 .hero-image {
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: calc(var(--gap) * 3);
   }
   main#Hero .Container .r2 .hero-image .image-placeholder,
   main#Hero .Container .r2 .hero-image img,
   main#Hero .Container .r2 .hero-image .imag-overlay {
     width: 100%;
     height: unset;
-    aspect-ratio: 5/3;
+    aspect-ratio: var(--Hero-Card-aspect-ratio);
   }
   main#Hero .Container .r2 .hero-image img {
     position: static;
@@ -762,10 +779,6 @@ footer .Container nav ul li a svg {
     transition: none;
     transform: none;
     opacity: 1;
-  }
-  main#Hero .Container .r2 .hero-image .hero-image:hover .card {
-    opacity: 1;
-    transform: none;
   }
   section[aria-labelledby=form-title] .Container {
     --container-width: calc(100% - 4rem);
@@ -792,7 +805,7 @@ footer .Container nav ul li a svg {
     display: block;
     position: absolute;
     top: 50%;
-    right: 1rem;
+    right: var(--gap);
     z-index: 9999;
     isolation: isolate;
     transform: translate(0, -50%);
@@ -811,7 +824,7 @@ footer .Container nav ul li a svg {
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;
-    transition: transform var(--time-fast) var(--animation), background var(--time-fast) var(--animation), opacity var(--time-fast) ease;
+    transition: transform var(--time-fast) var(--animation), background var(--time-fast) var(--animation), opacity var(--time-fast) var(--animation);
   }
   header.main-header .header__Container .c2 .mobile-nav-toggle span:first-child {
     transform-origin: 0% 0%;
@@ -860,37 +873,21 @@ footer .Container nav ul li a svg {
     text-align: center;
   }
   header.main-header .header__Container .c2 nav[data-state=opened] {
-    animation: slideIn var(--time-slow) var(--animation) forwards;
+    animation: navSlideIn var(--time-slow) var(--animation) forwards;
     display: block;
   }
   header.main-header .header__Container .c2 nav[data-state=closing] {
-    animation: slideOut var(--time-slow) var(--animation) forwards;
+    animation: navSlideOut var(--time-slow) var(--animation) forwards;
   }
   header.main-header .header__Container .c2 nav[data-state=closed] {
     display: none;
-  }
-  @keyframes slideIn {
-    0% {
-      transform: translateY(-125%);
-    }
-    100% {
-      transform: translateY(0%);
-    }
-  }
-  @keyframes slideOut {
-    0% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(-125%);
-    }
   }
   .hero-title {
     text-wrap: wrap;
     text-align: center;
   }
   main#Hero .Container .r1 p {
-    margin-top: 1rem;
+    margin-top: var(--gap);
     width: 100%;
     text-align: center;
   }
@@ -902,7 +899,7 @@ footer .Container nav ul li a svg {
   }
   .button:not(:last-child) {
     margin-right: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--gap);
   }
 }
 @media screen and (min-width: 26.5625em) {
@@ -934,6 +931,16 @@ footer .Container nav ul li a svg {
   html,
   body {
     overflow: hidden;
+  }
+}
+@supports not (aspect-ratio: 1/1) {
+  main#Hero .Container .r2 .hero-image {
+    height: calc(7vw + 7rem);
+  }
+  @media screen and (max-width: 64em) {
+    main#Hero .Container .r2 .hero-image {
+      height: 60vw;
+    }
   }
 }
 /* For people who have motion sickness. */

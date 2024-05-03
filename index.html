@@ -3,41 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Discover the best online travel agent for all travel needs. Book flights, hotels, & packages with ease. Plan your dream vacation with Smith-Hairston Travel."
+        />
+        <meta
+            name="keywords"
+            content="Travel, Agent, vacation, Smith, Hairston"
+        />
+        <meta name="author" content="Smith-Hairston Travel" />
+        <meta name="theme-color" content="#6546c3" />
+        <meta property="og:type" content="website" />
+        <!-- ###################################### -->
+        <meta
+            property="og:url"
+            content="https://smithhairstontravel.netlify.app"
+        />
+        <!-- ###################################### -->
+        <meta property="og:title" content="Smith-Hairston Travel" />
+        <meta
+            property="og:description"
+            content="Discover the best online travel agent for all travel needs. Book flights, hotels, & packages with ease. Plan your dream vacation with Smith-Hairston Travel."
+        />
+        <meta property="og:image" content="./design/website.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@SmithHairTravel" />
         <meta name="twitter:title" content="Smith-Hairston Travel" />
         <meta
             name="twitter:description"
-            content="Online Travel Agent: Making dreams come true one vacation at a time! "
+            content="Discover the best online travel agent for all travel needs. Book flights, hotels, & packages with ease. Plan your dream vacation with Smith-Hairston Travel."
         />
-        <meta property="og:type" content="website" />
-
         <meta name="twitter:image" content="./design/website.jpeg" />
-        <meta property="og:image" content="./design/website.jpeg" />
-
-        <!-- <meta property="og:url" content="" /> -->
-
-        <meta property="og:title" content="Smith-Hairston Travel" />
-        <meta
-            property="og:description"
-            content="Discover the best online travel agent for all travel needs. Book flights, hotels, 
-        & packages with ease. Plan your dream vacation with Smith-Hairston Travel."
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-            name="description"
-            content="Discover the best online travel agent for all travel needs. Book flights, hotels, 
-        & packages with ease. Plan your dream vacation with Smith-Hairston Travel."
-        />
-        <meta property="og:locale" content="en_US" />
-        <meta
-            name="keywords"
-            content="Travel, Agent, vacation, Smith ,Hairston"
-        />
-        <meta name="author" content="Smith-Hairston Travel" />
-        <meta name="color-scheme" content="light" />
-        <meta name="theme-color" content="#6546c3" />
         <link rel="icon" type="image/png" href="./assets/min-logo.png" />
         <link rel="stylesheet" href="/style/index.css" />
         <title>Smith-Hairston Travel</title>
@@ -47,36 +46,55 @@
             href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
             rel="stylesheet"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
             rel="stylesheet"
         />
         <script>
             var supportsCssVars = function () {
-                var e,
-                    t = document.createElement("style");
-                return (
-                    (t.innerHTML = "root: { --tmp-var: bold; }"),
-                    document.head.appendChild(t),
-                    (e = !!(
-                        window.CSS &&
-                        window.CSS.supports &&
-                        window.CSS.supports("font-weight", "var(--tmp-var)")
-                    )),
-                    t.parentNode.removeChild(t),
-                    e
+                var style = document.createElement("style");
+                style.innerHTML = ":root { --tmp-var: bold; }";
+                document.head.appendChild(style);
+                var supported = !!(
+                    window.CSS &&
+                    window.CSS.supports &&
+                    window.CSS.supports("font-weight", "var(--tmp-var)")
                 );
+                style.parentNode.removeChild(style);
+                return supported;
             };
-            supportsCssVars() || alert("Please use a modern browser");
+            if (!supportsCssVars()) {
+                var div = document.createElement("div");
+                var p = document.createElement("p");
+                div.classList.add("old-script");
+                p.textContent =
+                    "Please update your browser to a modern version to view this website.";
+                div.appendChild(p);
+                document.body.appendChild(div);
+            }
+        </script>
+        <noscript>
+            <style>
+                .no-script {
+                    display: block !important;
+                }
+            </style>
+        </noscript>
+        <script nomodule="">
+            var div = document.createElement("div");
+            var p = document.createElement("p");
+            div.classList.add("old-script");
+            p.textContent =
+                "Please update your browser to a modern version to view this website.";
+            div.appendChild(p);
+            document.body.appendChild(div);
         </script>
     </head>
     <body>
         <header class="main-header">
             <div class="Container header__Container">
                 <div class="c1 coll">
-                    <div class="header__Logo">
+                    <div class="header__Logo loeadToDown">
                         <a href="https://smithhairstontravel.com/">
                             <picture>
                                 <source
@@ -89,9 +107,6 @@
                                     loading="eager"
                                 />
                             </picture>
-                            <span class="visually-hidden"
-                                >Smith Hairston Travel logo</span
-                            >
                         </a>
                     </div>
                 </div>
@@ -115,7 +130,7 @@
                         data-state="closed"
                     >
                         <ul id="main-navigation-list">
-                            <li>
+                            <li class="loeadToDown">
                                 <a
                                     href="https://smithhairstontravel.com/"
                                     target="_blank"
@@ -124,7 +139,7 @@
                                     Home
                                 </a>
                             </li>
-                            <li>
+                            <li class="loeadToDown">
                                 <a
                                     href="https://smithhairstontravel.com/about"
                                     target="_blank"
@@ -132,14 +147,14 @@
                                     >About</a
                                 >
                             </li>
-                            <li>
+                            <li class="loeadToDown">
                                 <a
                                     href="https://smithhairstontravel.com/special-group-packages"
                                     target="_blank"
                                     >Tours & Specials</a
                                 >
                             </li>
-                            <li>
+                            <li class="loeadToDown">
                                 <a
                                     href="https://www.disneytravelcenter.com/msa47e3860/"
                                     target="_blank"
@@ -147,7 +162,7 @@
                                     >Disney Vacations</a
                                 >
                             </li>
-                            <li>
+                            <li class="loeadToDown">
                                 <a
                                     href="https://calendly.com/lolita-jfg/travel-consultation"
                                     type="button"
@@ -181,15 +196,16 @@
                         <div class="image-placeholder"></div>
                         <img
                             srcset="
-                                ./assets/greek-M.jpg   600w,
-                                ./assets/greek-L.jpg  1200w,
-                                ./assets/greek-XL.jpg 2400w
+                                ./assets/greedk-M.jpg   600w,
+                                ./assets/greedk-L.jpg  1200w,
+                                ./assets/greedk-XL.jpg 2400w
                             "
                             sizes="(max-width: 600px) 100vw,
                                    (max-width: 1200px) 50vw, 
                                    25vw"
-                            src="./assets/greek-XL.jpg"
+                            src="./assets/greedk-XL.jpg"
                             alt="greek"
+
                         />
                         <div class="imag-overlay">
                             <svg
@@ -200,10 +216,10 @@
                                     d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                                 />
                             </svg>
-                            <h2>Greek islands</h2>
+                            <h2 aria-hidden="true">Greek islands</h2>
                         </div>
                         <div class="card">
-                            <h3>10 day Greek islands hopper tour:</h3>
+                            <h3>10 day Greek islands hopper tour</h3>
                             <p class="small">
                                 Escape the fast lane and discover the Greek
                                 island life. Hop between Santorini and Mykonos,
@@ -242,7 +258,7 @@
                                     d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                                 />
                             </svg>
-                            <h2>South Africa</h2>
+                            <h2 aria-hidden="true">South Africa</h2>
                         </div>
                         <div class="card">
                             <h3>Spectacular SOUTH AFRICA</h3>
@@ -284,7 +300,7 @@
                                     d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                                 />
                             </svg>
-                            <h2>Egypt</h2>
+                            <h2 aria-hidden="true">Egypt</h2>
                         </div>
                         <div class="card">
                             <h3>11 Days Exploring the Splendors of EGYPT</h3>
@@ -325,7 +341,7 @@
                                     d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                                 />
                             </svg>
-                            <h2>Japan</h2>
+                            <h2 aria-hidden="true">Japan</h2>
                         </div>
                         <div class="card">
                             <h3>Majestic JAPAN</h3>
@@ -514,22 +530,14 @@
                 </nav>
             </div>
         </footer>
+        <div class="no-script">
+            <p>Please enable JavaScript to view this website.</p>
+        </div>
 
-        <noscript>
-            <div class="no-script">
-                <p>Please enable JavaScript to view this website.</p>
-            </div>
-        </noscript>
-        <script nomodule="">
-            var div = document.createElement("div");
-            var p = document.createElement("P");
-            div.classList.add("old-script");
-            p.textContent =
-                "Please update your browser to modern version to view this website.";
-            div.appendChild(p);
-            document.body.appendChild(div);
-        </script>
         <style>
+            :where(.no-script) {
+                display: none;
+            }
             .old-script,
             .no-script {
                 width: 100%;

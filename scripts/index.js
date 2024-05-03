@@ -54,6 +54,12 @@ function onAnimationEnd() {
     phoneNavList.setAttribute("data-state", "closed");
 }
 
+// ################# (hero) #################
+const heroImages = document.querySelectorAll(".hero-image img");
+const imagesPlaceholder = document.querySelectorAll(
+    ".hero-image .image-placeholder"
+);
+
 // ################# (form) #################
 
 const inputName = document.querySelector("input#input-name");
