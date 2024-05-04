@@ -135,17 +135,6 @@ a:not(.button) {
   }
 }
 :root {
-  --container-width: 90%;
-  --Header-hight: 5rem;
-  --Logo-hight: 60%;
-  --Hero-Card-aspect-ratio: 1.6 / 1;
-  --radius: 0.5em;
-  --shadow: 0 6px 30px rgba(0, 0, 0, 10%);
-  --margin: min(12em, 12vh);
-  --gap: 1rem;
-  --animation: cubic-bezier(0.4, 0, 0.2, 1);
-  --time-fast: 0.2s;
-  --time-slow: 0.4s;
   /* Alpha */
   --clr-alpha-white: 0, 0%, 100%;
   --clr-alpha-black: 0, 0%, 0%;
@@ -156,6 +145,8 @@ a:not(.button) {
   --contrast-clr-light: hsl(25, 92%, 61%);
   --link-clr-light: hsl(229, 57%, 53%);
   --mono-clr-light: hsla(0, 0%, 50%, 0.5);
+  --error-clr-light: hsla(0, 68%, 47%, 0.7);
+  --success-clr-light: hsla(120, 64%, 48%, 0.7);
   /* Main Colors */
   --bg-clr: var(--bg-clr-light);
   --txt-clr: var(--txt-clr-light);
@@ -163,6 +154,7 @@ a:not(.button) {
   --contrast-clr: var(--contrast-clr-light);
   --link-clr: var(--link-clr-light);
   --mono-clr: var(--mono-clr-light);
+  --error-clr: var(--error-clr-light);
   color-scheme: light;
   --ff-sans: "Open Sans", sans-serif;
   --ff-serif: "Libre Caslon Text", serif;
@@ -175,6 +167,19 @@ a:not(.button) {
   --fw-l: 400;
   --fw-m: 500;
   --fw-b: 700;
+  --container-width: 90%;
+  --Header-hight: 5rem;
+  --Logo-hight: 60%;
+  --Hero-Card-aspect-ratio: 1.6 / 1;
+  --radius: 0.5em;
+  --shadow: 0 6px 30px rgba(0, 0, 0, 10%);
+  --margin: min(12em, 12vh);
+  --gap: 1rem;
+  --icon-size: 1rem;
+  --icon-clr: var(--bg-clr);
+  --animation: cubic-bezier(0.4, 0, 0.2, 1);
+  --time-fast: 0.2s;
+  --time-slow: 0.4s;
 }
 
 *,
@@ -273,6 +278,14 @@ svg {
   isolation: isolate;
 }
 
+svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  aspect-ratio: 1;
+  fill: var(--icon-clr);
+  color: var(--icon-clr);
+}
+
 .form-input {
   border: 0.1em solid var(--mono-clr);
   border-radius: var(--radius);
@@ -285,11 +298,24 @@ svg {
 }
 
 .form-label {
+  position: relative;
   text-transform: uppercase;
   font-size: 0.7em;
   letter-spacing: 0.05em;
   margin-inline: 0.45em;
   padding: 0.1em 0.35em;
+}
+
+.form-label::after {
+  content: "*";
+  position: absolute;
+  top: -10%;
+  right: -3px;
+  font-size: 1em;
+  color: var(--error-clr);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .form-input:focus {
@@ -539,7 +565,6 @@ main#Hero .Container .r2 .hero-image {
   aspect-ratio: var(--Hero-Card-aspect-ratio);
   position: relative;
 }
-main#Hero .Container .r2 .hero-image .image-placeholder,
 main#Hero .Container .r2 .hero-image img,
 main#Hero .Container .r2 .hero-image .imag-overlay,
 main#Hero .Container .r2 .hero-image .card {
@@ -547,7 +572,6 @@ main#Hero .Container .r2 .hero-image .card {
   width: 100%;
   left: 0;
 }
-main#Hero .Container .r2 .hero-image .image-placeholder,
 main#Hero .Container .r2 .hero-image img,
 main#Hero .Container .r2 .hero-image .imag-overlay {
   height: 100%;
@@ -555,12 +579,14 @@ main#Hero .Container .r2 .hero-image .imag-overlay {
   border-radius: var(--radius);
 }
 main#Hero .Container .r2 .hero-image .image-placeholder {
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
   background-color: var(--txt-clr);
   opacity: 0.1;
 }
 main#Hero .Container .r2 .hero-image img {
-  z-index: 3;
+  z-index: 2;
   box-shadow: var(--shadow);
 }
 main#Hero .Container .r2 .hero-image .imag-overlay {
@@ -568,7 +594,7 @@ main#Hero .Container .r2 .hero-image .imag-overlay {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  z-index: 4;
+  z-index: 3;
   overflow: hidden;
   padding: 5% 5% 8% 8%;
   opacity: 0;
@@ -585,11 +611,9 @@ main#Hero .Container .r2 .hero-image .imag-overlay h2 {
   width: 40%;
 }
 main#Hero .Container .r2 .hero-image .imag-overlay svg {
-  width: 1em;
-  height: 1em;
+  --icon-size: 1em;
+  --icon-clr: var(--bg-clr);
   align-self: flex-end;
-  fill: var(--bg-clr);
-  color: var(--bg-clr);
 }
 main#Hero .Container .r2 .hero-image .card {
   height: auto;
@@ -719,11 +743,8 @@ footer .Container nav ul li {
   transition: transform var(--time-fast) var(--animation);
 }
 footer .Container nav ul li a svg {
-  width: 2rem;
-  height: 2rem;
-  aspect-ratio: 1;
+  --icon-size: 2rem;
   box-shadow: var(--shadow);
-  fill: var(--bg-clr);
 }
 
 @media screen and (min-width: 100em) {
@@ -763,9 +784,6 @@ footer .Container nav ul li a svg {
     width: 100%;
     height: unset;
     aspect-ratio: var(--Hero-Card-aspect-ratio);
-  }
-  main#Hero .Container .r2 .hero-image img {
-    position: static;
   }
   main#Hero .Container .r2 .hero-image .imag-overlay {
     opacity: 1;

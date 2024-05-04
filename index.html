@@ -381,7 +381,7 @@
                     <h2 id="form-title" class="h3">
                         Where can we help you go?
                     </h2>
-                    <form>
+                    <form id="main-form">
                         <div class="input-wrapper">
                             <label for="input-name" class="form-label">
                                 Name
@@ -391,6 +391,8 @@
                                 id="input-name"
                                 class="form-input"
                                 placeholder="Name"
+                                minlength="2"
+                                maxlength="50"
                                 autocomplete="given-name"
                                 required="true"
                             />
@@ -406,6 +408,8 @@
                                 placeholder="Email"
                                 autocomplete="email"
                                 required="true"
+                                minlength="6"
+                                maxlength="80"
                             />
                         </div>
                         <div class="input-wrapper">
@@ -419,6 +423,8 @@
                                 placeholder="Outbound Travel Location"
                                 autocomplete="address-level1"
                                 required="true"
+                                minlength="2"
+                                maxlength="80"
                             />
                         </div>
                         <div class="input-wrapper">
@@ -432,6 +438,8 @@
                                 placeholder="Desired Destination"
                                 autocomplete="address-level1"
                                 required="true"
+                                minlength="2"
+                                maxlength="80"
                             />
                         </div>
                         <div class="input-wrapper">
@@ -444,6 +452,8 @@
                                 class="form-input"
                                 placeholder="Date"
                                 required="true"
+                                min="2024-01-01"
+                                max="2030-01-01"
                             />
                         </div>
                         <div class="input-wrapper">
@@ -454,8 +464,9 @@
                                 type="number"
                                 id="input-price"
                                 class="form-input"
-                                placeholder="Package Preferred Price Range"
-                                autocomplete="address-level1"
+                                placeholder="Price"
+                                min="1"
+                                max="1000000"
                                 required="true"
                             />
                         </div>
