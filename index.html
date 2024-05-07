@@ -381,13 +381,14 @@
                     <h2 id="form-title" class="h3">
                         Where can we help you go?
                     </h2>
-                    <form id="main-form">
+                    <form id="main-form" method="POST">
                         <div class="input-wrapper">
                             <label for="input-name" class="form-label">
                                 Name
                             </label>
                             <input
                                 type="text"
+                                name="Client Name"
                                 id="input-name"
                                 class="form-input"
                                 placeholder="Name"
@@ -403,6 +404,7 @@
                             </label>
                             <input
                                 type="email"
+                                name="Email"
                                 id="input-email"
                                 class="form-input"
                                 placeholder="Email"
@@ -418,6 +420,7 @@
                             </label>
                             <input
                                 type="text"
+                                name="Travel-Location"
                                 id="input-location"
                                 class="form-input"
                                 placeholder="Outbound Travel Location"
@@ -433,6 +436,7 @@
                             </label>
                             <input
                                 type="text"
+                                name="Desired-Destination"
                                 id="input-destination"
                                 class="form-input"
                                 placeholder="Desired Destination"
@@ -448,13 +452,17 @@
                             </label>
                             <input
                                 type="date"
-                                id="input-date-from"
+                                name="Travel-Dates"
+                                id="input-date"
                                 class="form-input"
-                                placeholder="Date"
                                 required="true"
                                 min="2024-01-01"
                                 max="2030-01-01"
+                                tabindex="-1"
                             />
+                            <button type="button" id="date-btn">
+                                select date
+                            </button>
                         </div>
                         <div class="input-wrapper">
                             <label for="input-price" class="form-label">
@@ -462,6 +470,7 @@
                             </label>
                             <input
                                 type="number"
+                                name="Package-Price"
                                 id="input-price"
                                 class="form-input"
                                 placeholder="Price"
@@ -470,7 +479,13 @@
                                 required="true"
                             />
                         </div>
-                        <p id="submit-message" class="small"></p>
+                        <p
+                            id="submit-message"
+                            class="small"
+                            date-form-error="waiting"
+                        >
+                            Please enter your information to submit.
+                        </p>
                         <button
                             type="submit"
                             class="button btn-contrast"
