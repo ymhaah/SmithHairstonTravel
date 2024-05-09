@@ -79,6 +79,12 @@ dateInput.addEventListener("click", () => {
 dateInput.addEventListener("focus", () => {
     dateInput.showPicker();
 });
+returnDateInput.addEventListener("click", () => {
+    returnDateInput.showPicker();
+});
+returnDateInput.addEventListener("focus", () => {
+    returnDateInput.showPicker();
+});
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
