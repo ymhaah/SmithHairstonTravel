@@ -70,6 +70,7 @@ let phoneNumberInput = document.getElementById("Phone-number");
 let locationInput = document.getElementById("input-location");
 let destinationInput = document.getElementById("input-destination");
 let dateInput = document.getElementById("input-date");
+let returnDateInput = document.getElementById("input-return-date");
 const submittedMessage = document.getElementById("submit-message");
 
 dateInput.addEventListener("click", () => {
@@ -87,6 +88,7 @@ form.addEventListener("submit", (event) => {
     let location = locationInput.value;
     let destination = destinationInput.value;
     let date = dateInput.value;
+    let returnDate = returnDateInput.value;
     let priceRange = phoneNumberInput.value;
 
     // ? Function to reset input fields
@@ -96,6 +98,7 @@ form.addEventListener("submit", (event) => {
         locationInput.value = "";
         destinationInput.value = "";
         dateInput.value = "";
+        returnDateInput.value = "";
         phoneNumberInput.value = "";
     }
     // ? Function to update form state message
