@@ -1,5 +1,5 @@
 const URL =
-    "https://script.google.com/macros/s/AKfycbyIpGQppAA9pK1-gbhMJ5HbPTRcNOOjSBHbuVz5SIc-bnneKxhH9cU3my068enKuGP9NA/exec";
+    "https://script.google.com/macros/s/AKfycbwjv_BtMagaW0IoseEdTSaHGSa2SvuH9XbV7OW4l-EIGK7OpXelOW0bj6ncRuE_QQVwLQ/exec";
 
 // ? Add a message to the document title when the window loses focus
 window.addEventListener("blur", () => {
@@ -66,10 +66,10 @@ function onAnimationEnd() {
 const form = document.querySelector("form");
 let nameInput = document.getElementById("input-name");
 let emailInput = document.getElementById("input-email");
+let phoneNumberInput = document.getElementById("Phone-number");
 let locationInput = document.getElementById("input-location");
 let destinationInput = document.getElementById("input-destination");
 let dateInput = document.getElementById("input-date");
-let priceRangeInput = document.getElementById("input-price");
 const submittedMessage = document.getElementById("submit-message");
 
 let travelDateBtn = document.getElementById("date-btn");
@@ -89,7 +89,7 @@ form.addEventListener("submit", (event) => {
     let location = locationInput.value;
     let destination = destinationInput.value;
     let date = dateInput.value;
-    let priceRange = priceRangeInput.value;
+    let priceRange = phoneNumberInput.value;
 
     // ? Function to reset input fields
     function resetInput() {
