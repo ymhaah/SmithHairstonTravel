@@ -558,7 +558,7 @@ main#Hero .Container .r2 .hero-image .image-placeholder {
     opacity: 0.1;
 }
 main#Hero .Container .r2 .hero-image img {
-    z-index: 2;
+    z-index: 3;
     box-shadow: var(--shadow);
 }
 main#Hero .Container .r2 .hero-image .imag-overlay {
@@ -566,7 +566,7 @@ main#Hero .Container .r2 .hero-image .imag-overlay {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    z-index: 3;
+    z-index: 4;
     overflow: hidden;
     padding: 5% 5% 8% 8%;
     opacity: 0;
@@ -597,7 +597,7 @@ main#Hero .Container .r2 .hero-image .imag-overlay svg {
 main#Hero .Container .r2 .hero-image .card {
     height: auto;
     top: 96%;
-    z-index: 1;
+    z-index: 2;
     isolation: isolate;
     transform: translateY(-25%);
     opacity: 0;
