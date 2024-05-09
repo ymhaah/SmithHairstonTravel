@@ -72,12 +72,10 @@ let destinationInput = document.getElementById("input-destination");
 let dateInput = document.getElementById("input-date");
 const submittedMessage = document.getElementById("submit-message");
 
-let travelDateBtn = document.getElementById("date-btn");
-
-travelDateBtn.addEventListener("click", () => {
+dateInput.addEventListener("click", () => {
     dateInput.showPicker();
 });
-travelDateBtn.addEventListener("focus", () => {
+dateInput.addEventListener("focus", () => {
     dateInput.showPicker();
 });
 
