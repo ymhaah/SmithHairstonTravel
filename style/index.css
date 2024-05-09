@@ -192,7 +192,7 @@ svg {
     padding: 0.1em 0.35em;
 }
 
-.form-label:not([id="Phone-number"])::after {
+.form-label.required::after {
     content: "*";
     position: absolute;
     top: -10%;

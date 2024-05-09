@@ -377,7 +377,7 @@
                     </h2>
                     <form id="main-form" method="POST">
                         <div class="input-wrapper">
-                            <label for="input-name" class="form-label">
+                            <label for="input-name required" class="form-label">
                                 Name
                             </label>
                             <input
@@ -393,7 +393,10 @@
                             />
                         </div>
                         <div class="input-wrapper">
-                            <label for="input-email" class="form-label">
+                            <label
+                                for="input-email required"
+                                class="form-label"
+                            >
                                 Email
                             </label>
                             <input
@@ -418,12 +421,15 @@
                                 id="Phone-number"
                                 class="form-input"
                                 placeholder="Phone number"
-                                min="1"
-                                max="15"
+                                minlength="1"
+                                maxlength="15"
                             />
                         </div>
                         <div class="input-wrapper">
-                            <label for="input-location" class="form-label">
+                            <label
+                                for="input-location"
+                                class="form-label required"
+                            >
                                 Outbound Travel Location
                             </label>
                             <input
@@ -439,7 +445,10 @@
                             />
                         </div>
                         <div class="input-wrapper">
-                            <label for="input-destination" class="form-label">
+                            <label
+                                for="input-destination"
+                                class="form-label required"
+                            >
                                 Desired Destination
                             </label>
                             <input
@@ -455,7 +464,7 @@
                             />
                         </div>
                         <div class="input-wrapper">
-                            <label for="input-date" class="form-label">
+                            <label for="input-date" class="form-label required">
                                 Preferred Travel Dates
                             </label>
                             <input
