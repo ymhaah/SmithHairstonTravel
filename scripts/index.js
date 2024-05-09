@@ -98,7 +98,7 @@ form.addEventListener("submit", (event) => {
         locationInput.value = "";
         destinationInput.value = "";
         dateInput.value = "";
-        priceRangeInput.value = "";
+        phoneNumberInput.value = "";
     }
     // ? Function to update form state message
     function formStateMessage(message, errorState) {
