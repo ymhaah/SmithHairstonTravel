@@ -1,5 +1,5 @@
 const URL =
-    "https://script.google.com/macros/s/AKfycbyIpGQppAA9pK1-gbhMJ5HbPTRcNOOjSBHbuVz5SIc-bnneKxhH9cU3my068enKuGP9NA/exec";
+    "https://script.google.com/macros/s/AKfycbwjv_BtMagaW0IoseEdTSaHGSa2SvuH9XbV7OW4l-EIGK7OpXelOW0bj6ncRuE_QQVwLQ/exec";
 
 // ? Add a message to the document title when the window loses focus
 window.addEventListener("blur", () => {
