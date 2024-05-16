@@ -152,14 +152,7 @@ form.addEventListener("submit", (event) => {
             return false;
         }
 
-        if (/[^a-zA-Z0-9\s]/.test(trimmedValue)) {
-            formStateMessage(
-                `Invalid ${fieldName}. ${fieldName} contains disallowed special characters. Please enter valid text.`,
-                "error"
-            );
-            input.select();
-            return false;
-        }
+       
 
         return true;
     }
@@ -194,14 +187,7 @@ form.addEventListener("submit", (event) => {
             return false;
         }
 
-        if (/[^a-zA-Z0-9@._-]/.test(trimmedEmail)) {
-            formStateMessage(
-                "Email address contains disallowed special characters. Please enter a valid email.",
-                "error"
-            );
-            input.select();
-            return false;
-        }
+        
 
         return true;
     }
